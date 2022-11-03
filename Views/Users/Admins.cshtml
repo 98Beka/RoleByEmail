@@ -1,0 +1,30 @@
+﻿@model IEnumerable<Microsoft.AspNetCore.Identity.IdentityUser>
+@{
+    ViewBag.Title = "Список администраторов";
+}
+
+
+<form method="get" asp-controller="Account" asp-action="RemoveFromAdmins">
+    email
+    <input />
+    <input type="submit" value="добавить админа" />
+</form>
+<br />
+<form method="get" asp-controller="Account" asp-action="RemoveFromAdmins">
+    email
+    <input />
+    <input type="submit" value="удалить из админов" />
+</form>
+
+
+<br />
+<h>Администраторы</h>
+<br />
+<table class="table">
+    <tr><th>Email</th>
+    @foreach (var user in Model) {
+        <tr>
+            <td>@user.Email</td>
+        </tr>
+    }
+</table>
